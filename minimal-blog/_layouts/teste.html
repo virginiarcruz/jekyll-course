@@ -1,0 +1,33 @@
+<meta charset="UTF-8" />
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+     data-sly-use.comparativeCard="com.adobe.credicard.core.models.ComparativeCard"/>
+
+<section id="section4" class="section-premium col-md-12 col-xs-12" style="background: linear-gradient(135deg, ${properties.backgroundLeft @ context='uri'} 0%, ${properties.backgroundCenter @ context='uri'} 50%, ${properties.backgroundRight @ context='uri'} 100%);">
+    <div class="container">
+        <div class="col-md-4 col-xs-12" data-sly-test="${comparativeCard.checkImage || comparativeCard.checkButton || comparativeCard.checkText}">
+        	<sly data-sly-test="${comparativeCard.checkImage && comparativeCard.imageUrl != null}">
+        		<img class="hidden-xs hidden-sm" src="${comparativeCard.imageUrl}" alt="${comparativeCard.imageAlt}" title="${comparativeCard.caption}">
+        	</sly>
+            <div class="container-title-premium">
+                <div data-sly-test="${comparativeCard.checkText}" class="title-premium" data-sly-resource="${'text' @ resourceType='credicard/components/content/phase2/richtext'}"></div>
+                
+                <div id="ver-cartoes" data-sly-test="${comparativeCard.checkButton && comparativeCard.buttonTitle != null}">
+                	<a id="${comparativeCard.buttonIDAnalytics}" href="${comparativeCard.buttonPath ? comparativeCard.buttonPath : '#'}" target="${comparativeCard.buttonLinkTarget}" class="${comparativeCard.buttonCSSAnalytics} button button-borda" onclick="${comparativeCard.buttonJSAnalytics @ context='unsafe'}">${comparativeCard.buttonTitle}</a>
+            	</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-12 text-center box-ancora comparative">
+        <a href="#section4" class="ancora ancora-menubranco">
+            <span class="icon-itaufonts_seta_down"></span>
+        </a>
+    </div>
+</section>
+
+<a href="/content/credicard/atendimento.html" class="but-duvidas">
+    <span class="icon-itaufonts_ajuda"></span>
+    <p>dúvidas</p>
+</a>
