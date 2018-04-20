@@ -73,7 +73,6 @@
     {% endif %}
     ```
 
-
 ## Criando uma página
 
 - Para adicionar uma página ao site, crio a page na raiz, por exemplo: ``contact.md`` e adiciono a ela o titulo necessário, dizendo qual layout ela vai ter e etc
@@ -87,3 +86,6 @@
     Dentro da page posso adicionar conteúdo por markdown em html
 
     - No caso que tratamos a página contato tem o layout da page
+
+
+- Página de post
